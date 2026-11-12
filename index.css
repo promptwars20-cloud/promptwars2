@@ -1,0 +1,161 @@
+:root {
+  --lofi-bg: #0B0C10;
+  --lofi-surface: rgba(22, 24, 35, 0.75);
+  --lofi-border: rgba(165, 180, 252, 0.15);
+  --lofi-lavender: #A5B4FC;
+  --lofi-amber: #F59E0B;
+  --lofi-rose: #FB7185;
+  --lofi-cyan: #38BDF8;
+  
+  --font-serif-cinzel: 'Cinzel', serif;
+  --font-code: 'Fira Code', monospace;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.lofi-body {
+  background-color: var(--lofi-bg);
+  color: #E2E8F0;
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Canvas */
+#lofi-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lofi-content-wrap {
+  position: relative;
+  z-index: 10;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.lofi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--lofi-border);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.lofi-brand h1 {
+  font-family: var(--font-serif-cinzel);
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  color: #FFF;
+  text-shadow: 0 0 16px rgba(165, 180, 252, 0.4);
+}
+
+/* Grid Layout */
+.lofi-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr 340px;
+  gap: 24px;
+}
+
+@media (max-width: 1150px) {
+  .lofi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.lofi-card {
+  background: var(--lofi-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--lofi-border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.lofi-card-title {
+  font-family: var(--font-serif-cinzel);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--lofi-lavender);
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Giant Timer Display */
+.giant-timer-number {
+  font-family: var(--font-code);
+  font-size: 4.2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 0 0 24px rgba(245, 158, 11, 0.35);
+  margin: 18px 0;
+}
+
+/* Controls */
+.btn-lofi {
+  background: #1E2130;
+  color: #FFF;
+  border: 1px solid var(--lofi-border);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-family: var(--font-code);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.btn-lofi:hover {
+  background: #282C40;
+  border-color: var(--lofi-lavender);
+}
+
+.btn-lofi-amber {
+  background: var(--lofi-amber);
+  color: #0B0C10;
+  border-color: var(--lofi-amber);
+  font-weight: 700;
+}
+
+.btn-lofi-amber:hover {
+  background: #FBBF24;
+}
+
+/* Penalty Box */
+.penalty-box {
+  background: rgba(251, 113, 133, 0.08);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.penalty-count {
+  font-family: var(--font-code);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--lofi-rose);
+}
